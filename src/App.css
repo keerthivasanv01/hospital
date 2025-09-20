@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Add this for consistent sizing */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa; /* Optional: match other pages */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Header Top Strip */
+.header-top {
+  background-color: #fff;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-top .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header-top .logo span.red {
+  color: red;
+}
+
+.header-top .logo span.green {
+  color: green;
+}
+
+.header-top .info {
+  display: flex;
+  gap: 40px;
+}
+
+.header-top .info div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0f1e6a;
+  color: white;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li {
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  text-decoration: underline;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar input[type="text"] {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.navbar .appointment-btn {
+  background-color: #6495ed;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  background-color: #f1f4f9;
+}
+
+.hero .text {
+  max-width: 500px;
+}
+
+.hero .text p {
+  color: #0077cc;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero .text h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #001f5c;
+}
+
+.hero .text .services-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d8e9ff;
+  color: #001f5c;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero .appointments {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.hero .appointments button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.hero .appointments .dark {
+  background-color: #0f1e6a;
+  color: white;
+}
+
+.hero .appointments .light {
+  background-color: #cfe2ff;
+  color: #0f1e6a;
+}
+
+.hero .appointments .bright {
+  background-color: #00a2ff;
+  color: white;
+}
+
+.hero .image img {
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.hero .image img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .header-top,
+  .navbar,
+  .hero {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero .text,
+  .hero .appointments,
+  .hero .image img {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header-top {
+    padding: 10px 12px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .navbar {
+    padding: 12px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 32px 8px;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .hero .text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero .text h1 {
+    font-size: 24px;
+  }
+
+  .hero .appointments {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 18px;
+    align-items: center;
+  }
+
+  .hero .image img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}

@@ -1,0 +1,238 @@
+/* Contact Section */
+.contact-section {
+  padding: 40px 0 80px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.contact-section .container {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+}
+
+.contact-header {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 100px 20px 10px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .contact-header {
+    bottom: 0;
+    margin: 0 auto 40px;
+    padding: 60px 10px 10px;
+    text-align: center;
+  }
+}
+
+.contact-subtitle {
+  display: block;
+  color: #2d9cdb;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .contact-subtitle {
+    font-size: 12px;
+    position: static;
+    right: 0;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+}
+
+.contact-title {
+  font-size: 36px;
+  color: #1a2b48;
+  margin: 0 auto 100px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 30px;
+    position: static;
+    right: 0;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+}
+
+.contact-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #2d9cdb;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 40px;
+  position: relative;
+  right: 120px;
+}
+
+.contact-card {
+  background: #BFD2F8;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #eef2f7;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    position: static;
+    left: 0;
+    margin: 0 auto 15px auto;
+  }
+}
+
+.contact-card.highlight {
+  background: royalblue;
+  border: 1px solid #2d9cdb;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #2d9cdb;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 18px;
+  color: #1a2b48;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.card-content {
+  color: #6b7c93;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Hover Effects */
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-title {
+    font-size: 30px;
+  }
+  
+  .contact-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 30px auto 0 auto;
+    position: static;
+    right: 0;
+  }
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 18px;
+}
+
+.social-links p {
+  order: 1; /* Always at the top */
+  margin-bottom: 10px; /* More space below para */
+  font-weight: 500;
+}
+
+.social-icons {
+  order: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.social-icon {
+  font-size: 1.7rem;
+  color: #2563eb;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #1F2B6C;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+  .social-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: left !important;
+    margin-top: 10px !important;
+  }
+  .social-links p {
+    order: 0 !important;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+  }
+  .social-icons {
+    order: 1 !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+  .social-icon {
+    font-size: 2rem !important;
+  }
+}

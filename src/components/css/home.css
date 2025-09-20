@@ -1,0 +1,796 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.doctor-card{
+  position: relative;
+  left: 0px;
+}
+
+/* View All Button Styles */
+.view-all-btn {
+  background-color: #ffffff;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 160px; /* Reduced width */
+  max-width: 90vw;
+  min-width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Appointment Section Styles */
+.appointment-section {
+  display: flex;
+  padding: 4rem 2rem;
+  gap: 4rem;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* opacity: 0; */
+  min-height: 400px;
+ 
+}
+
+.appointment-content {
+  flex: 1;
+  position: relative;
+  left: 90px;
+  top: 150px;
+}
+
+.appointment-title {
+  color: #002aff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.appointment-description {
+  color: #1900ff;
+  line-height: 1.6;
+}
+
+.appointment-form {
+  flex: 1;
+  background: #f5f5f5; /* Changed from #fff to light gray */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Add input, select, textarea background for light gray */
+.appointment-form .form-input,
+.appointment-form select,
+.appointment-form textarea {
+  background: #f5f5f5 !important;
+}
+
+.appointment-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* On mobile, keep buttons in a single line and allow horizontal scroll if needed */
+@media (max-width: 576px) {
+  .appointment-cards {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .appointment-card {
+    min-width: 180px;
+    max-width: 220px;
+    flex: 0 0 auto;
+  }
+}
+
+/* Services Section Horizontal Row */
+.services-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  /* background: #fff; */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(31,43,108,0.08);
+  padding: 32px 18px;
+  min-width: 180px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 24px rgba(31,43,108,0.18);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.service-icon-img {
+  margin-bottom: 16px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive styles for services section */
+@media (max-width: 1200px) {
+  .services-section {
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    color: white;
+  }
+  .service-icons {
+    margin-left: 0;
+    width: 100%;
+  }
+  .service-icon {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .services-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .content-box {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+  .doctor-images {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .doctor-images img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .service-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .services-content {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .content-box {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .doctor-images {
+    width: 100%;   
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    
+  }
+  .doctor-images img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+  }
+  .services-content {
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 0.2rem;
+  }
+  .content-box {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .doctor-images {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    margin-top: 0.2rem;
+  }
+  .doctor-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .view-all-btn {
+    display: none;
+  }
+}
+
+/* Responsive styles for appointment section */
+@media (max-width: 992px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    left: 0;
+    top: 0;
+    margin-bottom: 2rem;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 2rem;
+  }
+  .appointment-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  .appointment-content {
+    margin-bottom: 1rem;
+  }
+  .appointment-title {
+    font-size: 1.5rem;
+  }
+  .appointment-form {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.2rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    margin-bottom: 0.5rem;
+    left: 0;
+    top: 0;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 1.1rem;
+  }
+  .appointment-form {
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+}
+
+/* Responsive spacing for home page sections */
+.body-center,
+.services-section,
+.specialties-container,
+.news-section,
+.doctors-section {
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    margin-bottom: 20px;
+    padding: 0 8px;
+    position: static;
+  }
+}
+
+@media (max-width: 992px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    margin-bottom: 18px;
+    padding: 0 6px;
+    position: static;
+  }
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    margin-bottom: 12px;
+    padding: 0 4px;
+    position: static;
+  }
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .doctor-images img,
+  .news-image {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .doctors-section {
+    margin-bottom: 8px;
+    padding: 0 2px;
+    position: static;
+  }
+  .specialties-header,
+  .news-title,
+  .doctors-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 8px !important;
+  }
+  .specialties-subtitle,
+  .news-subtitle,
+  .doctors-subtitle {
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+  .appointment-section {
+    padding: 0.5rem 0.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    margin-bottom: 0.5rem;
+    left: 0;
+    top: 0;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 1.1rem;
+  }
+  .appointment-form {
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  /* Removed .contact-cards and .contact-card styles */
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .doctor-image {
+    height: 120px !important;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.specialties-items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto 2rem;
+}
+
+@media (max-width: 576px) {
+  .specialties-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .service-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  .services-content {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .content-box {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .doctor-images {
+    width: 100%;   
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    
+  }
+  .doctor-images img {
+    width: 240px;
+    height: 140px;
+    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+  }
+  .services-content {
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 0.2rem;
+  }
+  .content-box {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .doctor-images {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2rem;
+    align-items: center;
+    margin-top: 0.2rem;
+  }
+  .doctor-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  .view-all-btn {
+    display: none;
+  }
+}
+
+/* Responsive styles for appointment section */
+@media (max-width: 992px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    left: 0;
+    top: 0;
+    margin-bottom: 2rem;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 2rem;
+  }
+  .appointment-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  .appointment-content {
+    margin-bottom: 1rem;
+  }
+  .appointment-title {
+    font-size: 1.5rem;
+  }
+  .appointment-form {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .appointment-section {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.2rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    margin-bottom: 0.5rem;
+    left: 0;
+    top: 0;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 1.1rem;
+  }
+  .appointment-form {
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+}
+
+/* Responsive spacing for home page sections */
+.body-center,
+.services-section,
+.specialties-container,
+.news-section,
+.contact-section,
+.doctors-section {
+  margin-bottom: 20px;
+  padding: 0;
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    margin-bottom: 20px;
+    padding: 0 8px;
+    position: static;
+  }
+}
+
+@media (max-width: 992px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    margin-bottom: 18px;
+    padding: 0 6px;
+    position: static;
+  }
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    margin-bottom: 12px;
+    padding: 0 4px;
+    position: static;
+  }
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .doctor-images img,
+  .news-image {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .body-center,
+  .services-section,
+  .specialties-container,
+  .news-section,
+  .contact-section,
+  .doctors-section {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0 2px;
+    position: static;
+  }
+
+  .news-section{
+    margin-top: 150px;
+  }
+  .specialties-header,
+  .news-title,
+  .contact-title,
+  .doctors-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 8px !important;
+  }
+  .specialties-subtitle,
+  .news-subtitle,
+  .contact-subtitle,
+  .doctors-subtitle {
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+  .appointment-section {
+    padding: 0.5rem 0.2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 0;
+  }
+  .appointment-content {
+    margin-bottom: 0.5rem;
+    left: 0;
+    top: 0;
+    position: static;
+  }
+  .appointment-title {
+    font-size: 1.1rem;
+  }
+  .appointment-form {
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    position: relative;
+    left: 200px;
+  }
+  .contact-card {
+    padding: 16px 8px;
+    min-width: 0;
+    max-width: 100%;
+    position: relative;
+    left: 200px
+  }
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .doctor-image {
+    height: 120px !important;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.specialties-items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto 2rem;
+}
+
+@media (max-width: 576px) {
+  .specialties-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0 auto 1rem;
+  }
+}
+
+

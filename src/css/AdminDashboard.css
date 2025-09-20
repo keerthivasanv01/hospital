@@ -1,0 +1,111 @@
+/* General styles */
+.admin-dashboard-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard-content {
+  display: flex;
+  flex: 1;
+  margin-top: 60px; /* Adjust this value to match the height of the Navbar */
+}
+
+.admin-dashboard-layout {
+  display: flex;
+  flex: 1;
+}
+
+.admin-dashboard-container {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Sidebar styles */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.admin-dashboard-sidebar {
+  width: 250px;
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.admin-dashboard-sidebar.open {
+  transform: translateX(0);
+}
+
+.admin-dashboard-sidebar h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-dashboard-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-dashboard-sidebar .sidebar-link {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.admin-dashboard-sidebar .sidebar-link:hover,
+.admin-dashboard-sidebar .sidebar-link.active {
+  background-color: #2563eb;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .admin-dashboard-layout {
+    flex-direction: column;
+  }
+
+  .admin-dashboard-sidebar {
+    width: 100%;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 60px; /* Adjust this value to match the height of the Navbar */
+    left: 0;
+    height: calc(100% - 60px); /* Adjust this value to match the height of the Navbar */
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-dashboard-container {
+    margin-top: 0;
+  }
+}

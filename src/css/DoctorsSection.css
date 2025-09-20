@@ -1,0 +1,264 @@
+/* Doctors Section */
+.doctors-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  color: #2d9cdb;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #1a2b48;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.section-description {
+  color: #6b7c93;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 16px;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-bottom: 40px;
+  position: relative;
+  left: 10px;
+}
+
+.doctor-card {
+  background: #ff0000;
+  border-radius: 8px;
+  width: 360px;
+  /* height: 550px; */
+  overflow: hidden;
+  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  
+
+  
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-image {
+  height: 400px;
+  width: 350px;
+  overflow: hidden;
+  position: relative;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+}
+
+.doctor-image img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 300px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.doctor-card:hover .doctor-image img {
+  transform: scale(1.05);
+
+}
+
+.doctor-info {
+  padding: 5px 2px;
+  background: #BFD2F8;
+  height: 210px;
+  width: 370px;
+}
+
+.doctor-info h3 {
+  margin: 0 0 5px 0;
+  color: #1a2b48;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.doctor-info .specialization {
+  color: #2d9cdb;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  /* color: #2d9cdb; */
+  background-color:#BFD2F8;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1064e1;
+  color: blue;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: #2d9cdb;
+  color: blue;
+  transform: translateY(-2px);
+}
+
+.view-all-doctors {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #2d9cdb;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid #2d9cdb;
+  box-shadow: 0 5px 15px rgba(45, 156, 219, 0.1);
+}
+
+.view-all-btn:hover {
+  background: transparent;
+  color: #2d9cdb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(45, 156, 219, 0.2);
+}
+
+.arrow-icon {
+  margin-left: 8px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.view-all-btn:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .doctors-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .doctors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .doctor-image {
+    height: 580px;
+  }
+
+  .doctor-info {
+  padding: 5px 2px;
+  background: #BFD2F8;
+  height: 250px;
+}
+}
+
+@media (max-width: 768px) {
+  .doctors-section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 30px;
+  }
+  
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto 30px;
+  }
+  
+  .doctor-image {
+    height: 750px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .doctor-image {
+    height: 870px;
+
+  }
+  .doctor-card {
+    position: relative;
+    right: 100px;
+  }
+
+  .view-all-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+  
+  .social-links {
+    gap: 6px;
+  }
+  
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
